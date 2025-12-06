@@ -17,7 +17,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 rounded-full gradient-gold flex items-center justify-center text-foreground font-display text-xl font-bold">
-                it
+                <img src="/logo.png" alt="Итальянские традиции" className="h-10 w-auto" />
               </div>
               <div>
                 <p className="font-display text-lg font-semibold">
