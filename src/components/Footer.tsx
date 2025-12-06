@@ -14,25 +14,30 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full gradient-gold flex items-center justify-center text-foreground font-display text-xl font-bold">
-                <img src="/logo.png" alt="Итальянские традиции" className="h-10 w-auto" />
+            <div className="lg:col-span-2">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center justify-center">
+                  <img
+                    src="/logo.png"
+                    alt="Итальянские традиции"
+                    className="h-10 w-10 rounded-full"
+                  />
+                </div>
+                <div>
+                  <p className="font-display text-lg font-semibold">
+                    Итальянские традиции
+                  </p>
+                  <p className="text-sm text-background/60">
+                    Сыроварня в центре Москвы
+                  </p>
+                </div>
               </div>
-              <div>
-                <p className="font-display text-lg font-semibold">
-                  Итальянские традиции
-                </p>
-                <p className="text-sm text-background/60">
-                  Сыроварня в центре Москвы
-                </p>
-              </div>
+              <p className="text-background/70 max-w-md leading-relaxed">
+                Производим итальянские сыры по традиционным рецептам из натурального молока. 
+                Поставки для ресторанов, магазинов и оптовых покупателей.
+              </p>
             </div>
-            <p className="text-background/70 max-w-md leading-relaxed">
-              Производим итальянские сыры по традиционным рецептам из натурального молока. 
-              Поставки для ресторанов, магазинов и оптовых покупателей.
-            </p>
-          </div>
+
 
           {/* Links */}
           <div>
