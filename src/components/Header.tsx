@@ -35,9 +35,13 @@ export function Header() {
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="w-12 h-12 rounded-full gradient-hero flex items-center justify-center text-primary-foreground font-display text-xl font-bold transition-transform group-hover:scale-105">
-            <img src="/logo.png" alt="Итальянские традиции" className="h-10 w-auto" />
-          </div>
+            <div className="flex items-center justify-center">
+              <img
+                src="/logo.png"
+                alt="Итальянские традиции"
+                className="h-10 w-10 rounded-full"
+              />
+            </div>
           <div className="hidden sm:block">
             <p className={cn(
               "font-display text-lg font-semibold transition-colors",
