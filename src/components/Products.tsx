@@ -137,11 +137,12 @@ export function Products() {
               {/* Image Placeholder */}
               <div className="aspect-square bg-gradient-to-br from-secondary via-muted to-secondary/80 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="font-display text-2xl text-primary font-semibold">
-                    {product.name.charAt(0)}
-                  </span>
-                </div>
+                  {/* фото товара */}
+                    <img
+                      src="/logo.png"
+                      alt={product.name}
+                      className="h-full w-full object-cover"
+                    />
               </div>
 
               {/* Content */}
