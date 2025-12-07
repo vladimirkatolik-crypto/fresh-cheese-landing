@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 const products = [
   {
     name: "Монтеблун",
+    image: "/products/monteblun.jpeg",
     subtitle: "горгонзола",
     description: "Благородный сыр с голубой плесенью",
     category: "blue",
@@ -139,7 +140,7 @@ export function Products() {
                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   {/* фото товара */}
                     <img
-                      src="/logo.png"
+                      src={product.image}
                       alt={product.name}
                       className="h-full w-full object-cover"
                     />
