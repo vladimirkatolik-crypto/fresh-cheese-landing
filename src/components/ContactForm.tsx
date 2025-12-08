@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
 import { Send, Phone, Mail, MapPin } from "lucide-react";
+import { useEffect } from "react";
 
 const businessTypes = [
   { value: "horeca", label: "HoReCa (рестораны, кафе)" },
@@ -53,6 +54,42 @@ export function ContactForm() {
     (e.target as HTMLFormElement).reset();
   };
 
+function CrmFormIframe() {
+  useEffect(() => {
+    // добавляем скрипт ресайзера
+    const script = document.createElement("script");
+    script.src = "https://itradition.ru/wa-apps/crm/js/iframeResizer.min.js";
+    script.async = true;
+
+    script.onload = () => {
+      const anyWindow = window as any;
+      if (anyWindow.iFrameResize) {
+        anyWindow.iFrameResize(
+          { heightCalculationMethod: "max" },
+          "#wa-crm-iframe"
+        );
+      }
+    };
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return (
+    <iframe
+      id="wa-crm-iframe"
+      name="wa-crm-iframe"
+      src="https://itradition.ru/crm/form/iframe/1/"
+      style={{ width: "100%", border: "0", height: "50px" }} // высоту скрипт потом подстроит
+      scrolling="no"
+    />
+  );
+}
+
+
   return (
     <section id="contacts" className="py-24 gradient-hero relative overflow-hidden">
       {/* Decorative Elements */}
@@ -70,74 +107,8 @@ export function ContactForm() {
               + бесплатные образцы для дегустации
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <Label htmlFor="name">Имя</Label>
-                <Input
-                  id="name"
-                  name="name"
-                  placeholder="Ваше имя"
-                  required
-                  className="h-12"
-                />
-              </div>
+            <CrmFormIframe />
 
-              <div className="space-y-2">
-                <Label htmlFor="phone">Телефон</Label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="+7 (___) ___-__-__"
-                  required
-                  className="h-12"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="email@company.ru"
-                  required
-                  className="h-12"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="business">Сфера деятельности</Label>
-                <Select name="business" required>
-                  <SelectTrigger className="h-12">
-                    <SelectValue placeholder="Выберите сферу" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {businessTypes.map((type) => (
-                      <SelectItem key={type.value} value={type.value}>
-                        {type.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <Button
-                type="submit"
-                size="lg"
-                className="w-full h-14 text-lg gradient-hero hover:opacity-90 transition-opacity"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <span className="animate-pulse">Отправка...</span>
-                ) : (
-                  <>
-                    Отправить заявку
-                    <Send className="ml-2 w-5 h-5" />
-                  </>
-                )}
-              </Button>
-            </form>
           </div>
 
           {/* Right Column - Contact Info */}
