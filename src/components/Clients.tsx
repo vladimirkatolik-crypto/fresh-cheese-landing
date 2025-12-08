@@ -1,4 +1,7 @@
 const clients = [
+  "Вкусвилл",
+  "Перекресток",
+  "Азбука Вкуса",
   "Novikov Group",
   "Bocconcino",
   "Валенок",
