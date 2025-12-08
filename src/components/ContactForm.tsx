@@ -98,8 +98,8 @@ function CrmFormIframe() {
 
       <div className="container relative mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-          {/* Left Column - Form */}
-          <div className="bg-card/95 backdrop-blur-sm rounded-3xl p-8 lg:p-10 shadow-elevated">
+         {/* Left Column - Form */}
+          <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-elevated border border-black/5">
             <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground mb-2">
               Получите прайс-лист
             </h2>
@@ -108,8 +108,8 @@ function CrmFormIframe() {
             </p>
 
             <CrmFormIframe />
-
           </div>
+
 
           {/* Right Column - Contact Info */}
           <div className="flex flex-col justify-center text-primary-foreground">
