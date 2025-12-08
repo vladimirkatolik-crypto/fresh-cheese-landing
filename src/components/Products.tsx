@@ -32,6 +32,7 @@ const products = [
   },
   {
     name: "Гран Пекорино",
+    image: "/products/gran-pec.jpeg",
     subtitle: "овечий сыр",
     description: "Пикантный овечий сыр длительной выдержки",
     category: "hard",
@@ -80,6 +81,7 @@ const products = [
   },
   {
     name: "Страчателла",
+    image: "/products/strachatella.jpeg",
     subtitle: "",
     description: "Нежнейшая начинка бурраты",
     category: "soft",
